@@ -1,0 +1,10 @@
+<ion-toolbar>
+  <ion-title text-center>{{ title }}</ion-title>
+</ion-toolbar>
+
+<ion-list radio-group [ngModel]="value">
+  <ion-item *ngFor="let option of options">
+    <ion-label>{{ option.label }}</ion-label>
+    <ion-radio [value]="option.value" (click)="close(option.value)"></ion-radio>
+  </ion-item>
+</ion-list>
