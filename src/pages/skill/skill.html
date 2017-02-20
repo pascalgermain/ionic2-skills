@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar no-border>
+    <ion-title>Pascal Germain - Comptétence {{ selectedItem.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-thumbnail>
+        <img src="/assets/img/logos/{{ selectedItem.logo }}">
+      </ion-thumbnail>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-title text-center>{{ selectedItem.name }}</ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-row>
+          <ion-col text-right>Site web :</ion-col>
+          <ion-col text-left><a href="http://{{ selectedItem.url }}/" target="_blank">{{ selectedItem.url }}</a></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-right>Type :</ion-col>
+          <ion-col text-left>{{ types[selectedItem.type] }}</ion-col>
+        </ion-row>
+        <ion-row *ngIf="selectedItem.language !== ''">
+          <ion-col text-right>Langage :</ion-col>
+          <ion-col text-left>{{ selectedItem.language }}</ion-col>
+        </ion-row>
+        <ion-row *ngIf="selectedItem.tags !== ''">
+          <ion-col text-right>Tag{{ (selectedItem.tags.indexOf(', ') === -1 ? 1 : 2) | pluralize }} :</ion-col>
+          <ion-col text-left>{{ selectedItem.tags }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-right>Expertise :</ion-col>
+          <ion-col text-left>{{ selectedItem.level + 1 }} ({{ levels[selectedItem.level] }})</ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

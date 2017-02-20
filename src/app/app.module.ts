@@ -5,7 +5,8 @@ import { FocuserDirective } from '../shared/directives';
 import { PluralizePipe } from '../shared/pipes';
 import { SelectPopoverComponent } from '../shared/components/select-popover';
 import { AppComponent } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { SkillsPage } from '../pages/skills/skills';
+import { SkillPage } from '../pages/skill/skill';
 
 @NgModule({
   declarations: [
@@ -13,15 +14,18 @@ import { HomePage } from '../pages/home/home';
     PluralizePipe,
     SelectPopoverComponent,
     AppComponent,
-    HomePage
+    SkillsPage,
+    SkillPage
   ],
   imports: [
     IonicModule.forRoot(AppComponent)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    SelectPopoverComponent,
     AppComponent,
-    HomePage
+    SkillsPage,
+    SkillPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

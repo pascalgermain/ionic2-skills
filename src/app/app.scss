@@ -14,3 +14,80 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+// pages
+.ion-page {
+  ion-navbar {
+    .toolbar-background {
+      background-color: color($colors, adc-3);
+    }
+
+    .toolbar-title,
+    button {
+      color: color($colors, white) !important;
+    }
+  }
+
+  ion-buttons {
+    white-space: nowrap; // Android 4.4.4
+  }
+
+  ion-content {
+    background-color: color($colors, grey-light);
+  }
+}
+
+
+// lists
+ion-toolbar.list-header {
+  .toolbar-background {
+    background-color: color($colors, adc-1);
+  }
+
+  .toolbar-title {
+    color: color($colors, white);
+  }
+}
+
+ion-item-divider {
+  background-color: color($colors, adc-2) !important;
+
+  .toolbar-title {
+    color: color($colors, white);
+  }
+}
+
+ion-list {
+  margin-bottom: 0 !important;
+
+  ion-avatar img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  h1 {
+    margin: 0;
+    line-height: 80px;
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-weight: bold !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
+// thumbnails
+ion-card ion-thumbnail {
+  width: 300px;
+  margin: 0 auto;
+}
+
+
+// popovers
+ion-popover ion-toolbar .toolbar-title {
+  font-size: 1.8rem;
+}

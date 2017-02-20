@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar no-border>
+    <ion-title *ngIf="!displaySearch">Pascal Germain - Compétences</ion-title>
+
+    <ion-buttons *ngIf="displaySearch">
+      <ion-searchbar focuser placeholder="Rechercher" (ionInput)="searchItems($event)"></ion-searchbar>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button hideWhen="ios" ion-button icon-only (click)="toggleSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <template ngFor let-item [ngForOf]="items" let-i="index">
+      <ion-item-divider *ngIf="typeHeader(item, i, items)">
+        <ion-title>{{ types[item.type] }}</ion-title>
+      </ion-item-divider>
+
+      <button ion-item detail-none (click)="itemTapped(item)">
+        <ion-avatar item-left>
+          <img src="/assets/img/languages/{{ item.image }}.svg">
+        </ion-avatar>
+
+        <h2>{{ item.name }}</h2>
+        <p *ngIf="item.tags !== ''">Tag{{ (item.tags.indexOf(', ') === -1 ? 1 : 2) | pluralize }} : {{ item.tags }}</p>
+
+        <ion-thumbnail item-right>
+          <h1>{{ item.level + 1 }} ({{ levels[item.level] }})</h1>
+        </ion-thumbnail>
+      </button>
+    </template>
+  </ion-list>
+</ion-content>
