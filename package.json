@@ -1,8 +1,9 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
-  "private": true,
+  "name": "ionic2-skills",
+  "version": "1.0.0",
+  "description": "Ionic 2/Cordova app.",
+  "author": "Pascal Germain <pascalgermain@me.com>",
+  "homepage": "http://pascalgermain.github.io/competences",
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
